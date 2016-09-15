@@ -11800,7 +11800,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -11852,14 +11852,14 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
 <span class="n">n_students</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">student_data</span><span class="p">)</span>
 
 <span class="c1"># TODO: Calculate number of features</span>
-<span class="n">n_features</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">student_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">n_features</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">student_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
 
 <span class="c1"># TODO: Calculate passing students</span>
 <span class="n">n_passed</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">passed</span><span class="p">[</span><span class="n">student_data</span><span class="o">.</span><span class="n">passed</span><span class="o">==</span><span class="s1">&#39;yes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
@@ -11889,7 +11889,7 @@ div#notebook {
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Total number of students: 395
-Number of features: 31
+Number of features: 30
 Number of students who passed: 265
 Number of students who failed: 130
 Graduation rate of the class: 67.09%
@@ -11915,7 +11915,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature columns</span>
@@ -11997,7 +11997,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -12068,7 +12068,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -12149,13 +12149,13 @@ Testing set has 95 samples.
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> <h1>Decision Trees</h1>
 Decision trees are used frequently in risk and decision analysis/management software especially in the finance sector.
-The model is very simple to understand and visualise. It is one of the most fundamental models yet is very power when used in the right situation. Each branch of the tree explicityly uses one of the features of the data to split the data. A decision tree mimics the idea of a person asking questions about a student to predict whether he would pass or fail so to me it logically feels like this would be a good model to use. A decision tree can easily become too complicated and hence result in over-fitting! Also a slight change in the training data can lead to a completely different tree. Some of the problems with decision trees link to multicollinearity, as the model will greedly chose the best one over two variables that explain the same thing. The data given is fairly small but has lots of features so we need to maximise the usage of features, which a decision tree does, hence I think is a good candinate for the problem.
+The model is very simple to understand and visualise. It is one of the most fundamental models yet is very power when used in the right situation. Each branch of the tree explicityly uses one of the features of the data to split the data. A decision tree mimics the idea of a person asking questions about a student to predict whether he would pass or fail so to me it logically feels like this would be a good model to use. The size of the predictive tree is logrithmic relative to the number of data points, this means that it will be small compared to other models. A decision tree can easily become too complicated and hence result in over-fitting! Also a slight change in the training data can lead to a completely different tree. Some of the problems with decision trees link to multicollinearity, as the model will greedly chose the best one over two variables that explain the same thing. The data given is fairly small but has lots of features so we need to maximise the usage of features, which a decision tree does, hence I think is a good candinate for the problem.
 <br/></p>
 <p><h1>Support Vector Machines</h1>
-SVMs have been used increasing for biological sciences, for example they were used to classify proteins and with an amazing accuracy of 90%! SVMs have a regularisation parameter which helps avoid over-fitting, also it uses the kernel trick so you can do some feature engineering! SVMs are known to be a bit slow compared to other algorithms, and it needs a lot of processing power! It could be argued that the limitation in the choice of kernel could be a weakness. The model is a good candinate as it will predict the classification of the student, and in past experience I have found it to be very accurate, more accurate than decision trees so it might be a good idea to put them against each other.
+SVMs have been used increasing for biological sciences, for example they were used to classify proteins and with an amazing accuracy of 90%! SVMs have a regularisation parameter which helps avoid over-fitting, also it uses the kernel trick so you can do some feature engineering! SVMs are known to be a bit slow compared to other algorithms, and it needs a lot of processing power! It could be argued that the limitation in the choice of kernel could be a weakness. The model is a good candinate as it will predict the classification of the student, and in past experience I have found it to be very accurate, more accurate than decision trees so it might be a good idea to put them against each other. They are very good for data which has lots of dimensions. SVMs work very well when there is no noise in the data, which is true in the case of our dataset. However, SVMs don't provide porbability estimates and their performance could be poor if the number of features is a lot higher than the number of samples.
 <br/></p>
 <p><h1>Logistic Regression</h1>
-Logistics regression is one of the most popular machine learning lagorithms for binary classification, which is what this problem is hence it is a good candinate. It is uses the sigmoid function. Logistics regression was used to create a model which was used to predict the mortality of injured patients, it was developed by Boyd et al and is widely known as the Trauma and Injury Severity Score or TRISS in short. However the only major disadvantage of this is that it requires a fairly large dataset to make accurate predictions but I wanted to test it out so I chose it and to see if it can build a better model than the other two classifiers even though it requires a lot more data</p>
+Logistics regression is one of the most popular machine learning lagorithms for binary classification, which is what this problem is hence it is a good candinate. It is uses the sigmoid function. Logistics regression was used to create a model which was used to predict the mortality of injured patients, it was developed by Boyd et al and is widely known as the Trauma and Injury Severity Score or TRISS in short. However the only major disadvantage of this is that it requires a fairly large dataset to make accurate predictions. Logistic regression tries to predict data by finding a linear equation to classify data points. It uses the natural log function to find the relationship between the variables and the test data to find the gradient.</p>
 
 </div>
 </div>
@@ -12180,7 +12180,7 @@ Logistics regression is one of the most popular machine learning lagorithms for 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -12253,7 +12253,7 @@ Logistics regression is one of the most popular machine learning lagorithms for 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -12262,13 +12262,15 @@ Logistics regression is one of the most popular machine learning lagorithms for 
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 
 <span class="c1"># TODO: Initialize the three models</span>
-<span class="n">clf_A</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
-<span class="n">clf_B</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
-<span class="n">clf_C</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">clf_A</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">clf_B</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">clf_C</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># TODO: Set up the training set sizes</span>
-<span class="n">X_train_100</span><span class="p">,</span><span class="n">dummy1</span><span class="p">,</span><span class="n">y_train_100</span><span class="p">,</span><span class="n">dummy2</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">train_size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">X_train_200</span><span class="p">,</span><span class="n">dummy3</span><span class="p">,</span><span class="n">y_train_200</span><span class="p">,</span><span class="n">dummy4</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">train_size</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">X_train_100</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">100</span><span class="p">]</span>
+<span class="n">y_train_100</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">100</span><span class="p">]</span>
+<span class="n">X_train_200</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">200</span><span class="p">]</span>
+<span class="n">y_train_200</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">200</span><span class="p">]</span>
 
 <span class="n">X_train_300</span><span class="o">=</span> <span class="n">X_train</span>
 <span class="n">y_train_300</span><span class="o">=</span> <span class="n">y_train</span>
@@ -12296,58 +12298,58 @@ Logistics regression is one of the most popular machine learning lagorithms for 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training a DecisionTreeClassifier using a training set size of 100. . .
-Trained model in 0.0000 seconds
+Trained model in 0.0040 seconds
 Made predictions in 0.0000 seconds.
 F1 score for training set: 1.0000.
 Made predictions in 0.0000 seconds.
-F1 score for test set: 0.7068.
+F1 score for test set: 0.6441.
 Training a DecisionTreeClassifier using a training set size of 200. . .
-Trained model in 0.0000 seconds
-Made predictions in 0.0000 seconds.
+Trained model in 0.0040 seconds
+Made predictions in 0.0040 seconds.
 F1 score for training set: 1.0000.
-Made predictions in 0.0000 seconds.
-F1 score for test set: 0.7442.
+Made predictions in 0.0010 seconds.
+F1 score for test set: 0.7077.
 Training a DecisionTreeClassifier using a training set size of 300. . .
-Trained model in 0.0000 seconds
+Trained model in 0.0060 seconds
 Made predictions in 0.0000 seconds.
 F1 score for training set: 1.0000.
 Made predictions in 0.0000 seconds.
-F1 score for test set: 0.7087.
+F1 score for test set: 0.6720.
 Training a SVC using a training set size of 100. . .
-Trained model in 0.0150 seconds
+Trained model in 0.0040 seconds
 Made predictions in 0.0000 seconds.
-F1 score for training set: 0.8421.
+F1 score for training set: 0.8591.
 Made predictions in 0.0000 seconds.
-F1 score for test set: 0.8108.
+F1 score for test set: 0.8333.
 Training a SVC using a training set size of 200. . .
-Trained model in 0.0000 seconds
-Made predictions in 0.0000 seconds.
-F1 score for training set: 0.8649.
-Made predictions in 0.0160 seconds.
-F1 score for test set: 0.8421.
+Trained model in 0.0120 seconds
+Made predictions in 0.0040 seconds.
+F1 score for training set: 0.8581.
+Made predictions in 0.0040 seconds.
+F1 score for test set: 0.8408.
 Training a SVC using a training set size of 300. . .
-Trained model in 0.0000 seconds
-Made predictions in 0.0160 seconds.
+Trained model in 0.0240 seconds
+Made predictions in 0.0120 seconds.
 F1 score for training set: 0.8584.
-Made predictions in 0.0000 seconds.
+Made predictions in 0.0050 seconds.
 F1 score for test set: 0.8462.
 Training a LogisticRegression using a training set size of 100. . .
-Trained model in 0.1950 seconds
-Made predictions in 0.0940 seconds.
-F1 score for training set: 0.8592.
-Made predictions in 0.0000 seconds.
-F1 score for test set: 0.7368.
+Trained model in 0.0040 seconds
+Made predictions in 0.0010 seconds.
+F1 score for training set: 0.8529.
+Made predictions in 0.0010 seconds.
+F1 score for test set: 0.7737.
 Training a LogisticRegression using a training set size of 200. . .
-Trained model in 0.0150 seconds
+Trained model in 0.0070 seconds
+Made predictions in 0.0020 seconds.
+F1 score for training set: 0.8269.
 Made predictions in 0.0000 seconds.
-F1 score for training set: 0.8394.
-Made predictions in 0.0000 seconds.
-F1 score for test set: 0.7031.
+F1 score for test set: 0.7857.
 Training a LogisticRegression using a training set size of 300. . .
-Trained model in 0.0000 seconds
-Made predictions in 0.0000 seconds.
+Trained model in 0.0090 seconds
+Made predictions in 0.0010 seconds.
 F1 score for training set: 0.8337.
-Made predictions in 0.0000 seconds.
+Made predictions in 0.0010 seconds.
 F1 score for test set: 0.7368.
 </pre>
 </div>
@@ -12388,21 +12390,21 @@ F1 score for test set: 0.7368.
 <td style="text-align:center">0.0040</td>
 <td style="text-align:center">0.0000</td>
 <td style="text-align:center">1.0000</td>
-<td style="text-align:center">0.7097</td>
+<td style="text-align:center">0.6441</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
 <td style="text-align:center">0.0080</td>
 <td style="text-align:center">0.0000</td>
 <td style="text-align:center">1.0000</td>
-<td style="text-align:center">0.7536</td>
+<td style="text-align:center">0.7077</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
 <td style="text-align:center">0.0040</td>
 <td style="text-align:center">0.0000</td>
 <td style="text-align:center">1.0000</td>
-<td style="text-align:center">0.6721</td>
+<td style="text-align:center">0.6720</td>
 </tr>
 </tbody>
 </table>
@@ -12421,15 +12423,15 @@ F1 score for test set: 0.7368.
 <td style="text-align:center">100</td>
 <td style="text-align:center">0.0040</td>
 <td style="text-align:center">0.0040</td>
-<td style="text-align:center">0.8435</td>
-<td style="text-align:center">0.8571</td>
+<td style="text-align:center">0.8591</td>
+<td style="text-align:center">0.8333</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
 <td style="text-align:center">0.0180</td>
 <td style="text-align:center">0.0070</td>
-<td style="text-align:center">0.8687</td>
-<td style="text-align:center">0.8387</td>
+<td style="text-align:center">0.8581</td>
+<td style="text-align:center">0.8408</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
@@ -12455,15 +12457,15 @@ F1 score for test set: 0.7368.
 <td style="text-align:center">100</td>
 <td style="text-align:center">0.0000</td>
 <td style="text-align:center">0.0000</td>
-<td style="text-align:center">0.8889</td>
-<td style="text-align:center">0.7287</td>
+<td style="text-align:center">0.8529</td>
+<td style="text-align:center">0.7737</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
 <td style="text-align:center">0.0150</td>
 <td style="text-align:center">0.0000</td>
-<td style="text-align:center">0.8244</td>
-<td style="text-align:center">0.7519</td>
+<td style="text-align:center">0.8269</td>
+<td style="text-align:center">0.7857</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
@@ -12523,7 +12525,8 @@ F1 score for test set: 0.7368.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> A support vector machine is a very popular machine learning algorithm. It works by plotting all the data points on a graph then tries to find a line that seperates the data into 2 sections. The data points that are closest to the othe type of data points, called support vectors, are used to find a line which leads to the highest margin or distance between the two data categories. Then when a line is found, for predicition the data point is plotted and then which ever side of the line it is on is it's class!</p>
+<p><strong>Answer: </strong> A support vector machine is a very popular machine learning algorithm. It works by plotting all the data points on a graph then tries to find a line that seperates the data into 2 sections. The data points that are closest to the othe type of data points, called support vectors, are used to find a line which leads to the highest margin or distance between the two data categories. Then when a line is found, for predicition the data point is plotted and then which ever side of the line it is on is it's class! An important part of the algorithm is the kernel trick. The kernel trick is a mapping function, it takes a given space and turns it into some other dimensional space. This is useful as when we encouter data that cannot be linearly seperated, but if we apply the kernel trick and map it to a different space then it will be possible to linearly seperate it, the image below explains it best.
+<img src="https://udacity-github-sync-content.s3.amazonaws.com/_imgs/8650/1461641606/SVM.png" alt="alt text" title="Explains the kernel trick and SVMs"></p>
 
 </div>
 </div>
@@ -12554,7 +12557,7 @@ F1 score for test set: 0.7368.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;GridSearchCV&#39; and &#39;make_scorer&#39;</span>
@@ -12562,10 +12565,9 @@ F1 score for test set: 0.7368.
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span><span class="p">,</span> <span class="n">f1_score</span>
 <span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
 <span class="c1"># TODO: Create the parameters list you wish to tune</span>
-<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.83</span><span class="p">,</span><span class="mf">0.84</span><span class="p">,</span><span class="mf">0.85</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
-         <span class="c1"># &#39;gamma&#39;: [&quot;auto&quot;,1.0, 5.0, 10.0,100,1000,10000]</span>
-        <span class="c1"># &#39;kernel&#39;:[&quot;rbf&quot;,&quot;sigmoid&quot;,&quot;linear&quot;,&quot;poly&quot;]</span>
-              
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">],</span>
+         <span class="s1">&#39;gamma&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">],</span>
+         <span class="s1">&#39;kernel&#39;</span><span class="p">:[</span><span class="s2">&quot;rbf&quot;</span><span class="p">,</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span><span class="s2">&quot;poly&quot;</span><span class="p">,</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">]</span>
         <span class="p">}</span>
 
 <span class="c1"># TODO: Initialize the classifier</span>
@@ -12590,24 +12592,6 @@ F1 score for test set: 0.7368.
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;C&#39;: 0.84}
-Made predictions in 0.0000 seconds.
-Tuned model has a training F1 score of 0.8473.
-Made predictions in 0.0000 seconds.
-Tuned model has a testing F1 score of 0.8462.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -12624,7 +12608,7 @@ Tuned model has a testing F1 score of 0.8462.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> The final models F1 training score is <strong>0.8473</strong> and the testing score is <strong>0.8462</strong>. This is the nearly the same as the untuned model which had a training score of 0.8584 and a testing score of 0.8462! I have tried all the different kernels and values but there is no improvement on the F1 score for testing but there is a small decrease in the score of the training making the difference between the training and testing score smaller which suggests that overfitting has been reduced which is good!</p>
+<p><strong>Answer: </strong> The final models F1 training score is <strong>0.7992</strong> and the testing score is<strong>0.9054</strong>. There is huge increase in the F1 score of the tuned model especially the testing score compared to the untuned model! The untuned model had a training score of 0.8584 and a testing score of 0.8462, even though the training score is higher in the untuned model the test score is lower.</p>
 
 </div>
 </div>
