@@ -12557,7 +12557,7 @@ F1 score for test set: 0.7368.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;GridSearchCV&#39; and &#39;make_scorer&#39;</span>
@@ -12565,9 +12565,9 @@ F1 score for test set: 0.7368.
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span><span class="p">,</span> <span class="n">f1_score</span>
 <span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
 <span class="c1"># TODO: Create the parameters list you wish to tune</span>
-<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">],</span>
-         <span class="s1">&#39;gamma&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">],</span>
-         <span class="s1">&#39;kernel&#39;</span><span class="p">:[</span><span class="s2">&quot;rbf&quot;</span><span class="p">,</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span><span class="s2">&quot;poly&quot;</span><span class="p">,</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">]</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.83</span><span class="p">,</span><span class="mf">0.84</span><span class="p">,</span><span class="mf">0.85</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+         <span class="c1">#&#39;gamma&#39;: [&quot;auto&quot;,1.0, 5.0, 10.0],</span>
+         <span class="c1">#&#39;kernel&#39;:[&quot;rbf&quot;,&quot;linear&quot;,&quot;poly&quot;,&quot;sigmoid&quot;]</span>
         <span class="p">}</span>
 
 <span class="c1"># TODO: Initialize the classifier</span>
@@ -12592,6 +12592,24 @@ F1 score for test set: 0.7368.
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;C&#39;: 0.84}
+Made predictions in 0.0160 seconds.
+Tuned model has a training F1 score of 0.8473.
+Made predictions in 0.0040 seconds.
+Tuned model has a testing F1 score of 0.8462.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -12608,7 +12626,7 @@ F1 score for test set: 0.7368.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> The final models F1 training score is <strong>0.7992</strong> and the testing score is<strong>0.9054</strong>. There is huge increase in the F1 score of the tuned model especially the testing score compared to the untuned model! The untuned model had a training score of 0.8584 and a testing score of 0.8462, even though the training score is higher in the untuned model the test score is lower.</p>
+<p><strong>Answer: </strong> The final models F1 training score is <strong>0.8473</strong> and the testing score is <strong>0.8462</strong>. This is the nearly the same as the untuned model which had a training score of 0.8584 and a testing score of 0.8462! I have tried all the different kernels and values but there is no improvement on the F1 score for testing but there is a small decrease in the score of the training making the difference between the training and testing score smaller which suggests that overfitting has been reduced which is good!"</p>
 
 </div>
 </div>
